@@ -23,21 +23,24 @@
 # Use is subject to license terms.
 #
 
-set $dir=/tmp
-set $filesize=5g
+set $dir=/mnt/
+set $filesize=2000g
 set $iosize=8k
-set $nthreads=1
+set $nthreads=10
 set $workingset=0
 set $directio=0
 
-define file name=largefile1,path=$dir,size=$filesize,prealloc,reuse,paralloc
+define file name=randwritefile1,path=$dir,size=$filesize,prealloc,reuse,paralloc
 
 define process name=rand-write,instances=1
 {
   thread name=rand-thread,memsize=5m,instances=$nthreads
   {
-    flowop write name=rand-write1,filename=largefile1,iosize=$iosize,random,workingset=$workingset,directio=$directio
+    flowop write name=rand-write1,filename=randwritefile1,iosize=$iosize,random,workingset=$workingset,directio=$directio
   }
 }
 
 echo "Random Write Version 3.0 personality successfully loaded"
+system "sync"
+system "echo 3> /proc/sys/vm/drop_caches"
+psrun -60 1800

@@ -54,5 +54,6 @@ define process name=filereader,instances=1
 }
 
 echo  "File-server Version 3.0 personality successfully loaded"
-
-psrun 10 60
+system "sync"
+system "echo 3> /proc/sys/vm/drop_caches"
+psrun -60 180

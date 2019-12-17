@@ -24,37 +24,27 @@
 #
 
 set $dir=/mnt/
-set $filesize=2500g
+set $filesize=6000g
 set $iosize=8k
 set $nthreads=42
 set $workingset=0
 set $directio=0
-debug 10
-define file name=largefile1,path=$dir,size=$filesize,prealloc,reuse,paralloc
+define file name=randrwfile1,path=$dir,size=$filesize,prealloc,reuse,paralloc
 
 define process name=rand-rw,instances=1
 {
   thread name=rand-r-thread,memsize=5m,instances=$nthreads
   {
-    flowop read name=rand-read1,filename=largefile1,iosize=$iosize,random,workingset=$workingset,directio=$directio,fd=1
-    flowop delay name="delay1",value=2
+    flowop read name=rand-read1,filename=randrwfile1,iosize=$iosize,random,workingset=$workingset,directio=$directio,fd=1
   }
   thread name=rand-w-thread,memsize=5m,instances=$nthreads
   {
-    flowop write name=rand-write1,filename=largefile1,iosize=$iosize,random,workingset=$workingset,directio=$directio,fd=1
-    flowop delay name="delay2",value=10
+    flowop write name=rand-write1,filename=randrwfile1,iosize=$iosize,random,workingset=$workingset,directio=$directio,fd=1
   }
-  #Adding the next thread
-  #thread name=fsync-thread,instances=1
-  # {
-  #  flowop openfile name="openfile1",filename=largefile1,fd=2
-  #  flowop delay name="delay3",value=10
-  #  flowop fsync name="fsync4",fd=2
-  #  flowop closefile name="closefile1",fd=2
-  #  flowop delay name="delay5",value=10
-  #}
 }
 
 echo "Random RW Version 3.0 personality successfully loaded"
 
-psrun 15 60
+system "sync"
+system "echo 3> /proc/sys/vm/drop_caches"
+psrun -60 1800

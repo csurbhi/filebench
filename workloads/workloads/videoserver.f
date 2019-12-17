@@ -79,5 +79,6 @@ define process name=vidreaders,instances=1
 }
 
 echo  "Video Server Version 3.0 personality successfully loaded"
-
-psrun 20 
+system "sync"
+system "echo 3> /proc/sys/vm/drop_caches"
+psrun -60 180

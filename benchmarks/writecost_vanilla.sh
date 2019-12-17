@@ -13,14 +13,14 @@
 # then pause for 30 sec
 
 
-cd /github/filebench-1.5-alpha3
+cd /home/surbhi/linux/github/filebench
 #for i in {1..20}
 #do
 #echo outputput/filter-data/vanilla/output_$i
-sudo ./filebench -f workloads/randomrw.f | tee outputput/filter-data/vanilla/output_randrw &
-sudo ./filebench -f workloads/randomwrite.f | tee outputput/filter-data/vanilla/output_randwrite &
-sudo ./filebench -f workloads/videoserver.f | tee outputput/filter-data/vanilla/output_small_vidserver 
-sudo ./filebench -f workloads/fileserver.f | tee outputput/filter-data/vanilla/output_fileserver
+sudo ./filebench -f workloads/workloads/randomrw.f | tee output/DM-SMR3/vanilla/output_randrw &
+sudo ./filebench -f workloads/workloads/randomwrite.f | tee output/DM-SMR3/vanilla/output_randwrite &
+sudo ./filebench -f workloads/workloads/videoserver.f | tee output/DM-SMR3/vanilla/output_small_vidserver 
+sudo ./filebench -f workload/workloads/fileserver.f | tee output/DM-SMR3/vanilla/output_fileserver
 # The sync is necessary for the next GC to begin.
 sync
 # we can also run the video server with this. but for initial testing lets do this
