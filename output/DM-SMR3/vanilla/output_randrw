@@ -1,0 +1,10 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 173MB of shared memory
+0.000: Random RW Version 3.0 personality successfully loaded
+
+0.407: Populating and pre-allocating filesets
+0.408: Removing randrwfile1 tree (if exists)
+0.411: Pre-allocating directories in randrwfile1 tree
+0.412: Pre-allocating files in randrwfile1 tree
+52865.309: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+52865.309: Population and pre-allocation of filesets completed
