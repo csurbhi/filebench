@@ -1,0 +1,50 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 173MB of shared memory
+0.001: Video Server Version 3.0 personality successfully loaded
+
+0.240: Populating and pre-allocating filesets
+0.240: passivevids populated: 194 files, avg. dir. width = 20, avg. dir. depth = 1.8, 0 leafdirs, 645438.000MB total size
+0.241: Removing passivevids tree (if exists)
+0.244: Pre-allocating directories in passivevids tree
+0.245: Pre-allocating files in passivevids tree
+1900.791: activevids populated: 60 files, avg. dir. width = 4, avg. dir. depth = 3.0, 0 leafdirs, 199620.000MB total size
+1900.791: Removing activevids tree (if exists)
+1900.799: Pre-allocating directories in activevids tree
+1900.800: Pre-allocating files in activevids tree
+3210.908: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+3340.203: Population and pre-allocation of filesets completed
+3340.205: Starting 1 vidreaders instances
+3340.207: Starting 1 vidwriter instances
+3341.218: Running...
+3401.225: Per-Operation Breakdown
+serverlimit          22764ops      379ops/s   0.0mb/s    134.1ms/op [0.00ms - 6253.19ms]
+vidreader            22935ops      382ops/s  95.3mb/s     58.2ms/op [0.01ms - 2888.24ms]
+replaceinterval      0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+fsyncfile1           0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+wrtclose             0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+newvid               0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+wrtopen              1ops        0ops/s   0.0mb/s      0.0ms/op [0.03ms -  0.03ms]
+vidremover           1ops        0ops/s   0.0mb/s    119.3ms/op [119.31ms - 119.31ms]
+3401.225: IO Summary: 22937 ops 382.246 ops/s 382/0 rd/wr  95.3mb/s  58.2ms/op
+3461.233: Per-Operation Breakdown
+serverlimit          41879ops      698ops/s   0.0mb/s     87.6ms/op [0.00ms - 6253.96ms]
+vidreader            41837ops      697ops/s 174.3mb/s     75.7ms/op [0.02ms - 1543.54ms]
+replaceinterval      0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+fsyncfile1           0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+wrtclose             0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+newvid               0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+wrtopen              0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+vidremover           0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+3461.233: IO Summary: 41837 ops 697.200 ops/s 697/0 rd/wr 174.3mb/s  75.7ms/op
+3521.239: Run took 180 seconds...
+3521.239: Per-Operation Breakdown
+serverlimit          21762ops      363ops/s   0.0mb/s    165.6ms/op [0.00ms - 1251.94ms]
+vidreader            21753ops      363ops/s  90.6mb/s    165.3ms/op [0.00ms - 1251.94ms]
+replaceinterval      0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+fsyncfile1           0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+wrtclose             0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+newvid               0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+wrtopen              0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+vidremover           0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+3521.239: IO Summary: 21753 ops 362.513 ops/s 363/0 rd/wr  90.6mb/s 165.3ms/op
+3521.240: Shutting down processes
