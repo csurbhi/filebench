@@ -1397,6 +1397,7 @@ fileset_populate_leafdir(fileset_t *fileset, filesetentry_t *parent, int serial)
 	fileset_insleafdirlist(fileset, entry);
 
 	(void) snprintf(tmpname, sizeof (tmpname), "%08d", serial);
+	strcat(tmpname, "*.mov");
 	if ((entry->fse_path = (char *)ipc_pathalloc(tmpname)) == NULL) {
 		filebench_log(LOG_ERROR,
 		    "fileset_populate_file: Can't alloc path string");
