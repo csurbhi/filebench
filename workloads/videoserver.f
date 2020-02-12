@@ -35,8 +35,8 @@
 
 set $dir=/tmp
 set $eventrate=96
-set $filesize=10g
-set $nthreads=48
+set $filesize=8m
+set $nthreads=20
 set $numactivevids=32
 set $numpassivevids=194
 set $reuseit=false
